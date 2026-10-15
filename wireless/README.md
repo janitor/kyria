@@ -5,6 +5,32 @@ Wireless Controllers, CR1632 coin-cell battery boards, no display or other
 Halcyon modules, and the Halcyon USB-C dongle. It uses ZMK, not the wired QMK
 firmware in the parent directory.
 
+## Firmware revisions used for the latest build
+
+The regular images built on 2026-10-13 after the support-requested settings
+reset use these pinned upstream revisions:
+
+| Component | Repository | Commit |
+| --- | --- | --- |
+| ZMK firmware | [splitkb/zmk](https://github.com/splitkb/zmk) | [`f0821fb5e7f1577bcfce36fb4ce899cfb395f00a`](https://github.com/splitkb/zmk/commit/f0821fb5e7f1577bcfce36fb4ce899cfb395f00a) |
+| Halcyon hardware module | [splitkb/zmk-halcyon-module](https://github.com/splitkb/zmk-halcyon-module) | [`a83eaa492a678ed12fb5feabc62426dc1ed3a3cb`](https://github.com/splitkb/zmk-halcyon-module/commit/a83eaa492a678ed12fb5feabc62426dc1ed3a3cb) |
+
+The exact build manifest is [`config/west.yml`](config/west.yml). All three
+regular build targets below use that manifest; [`build.yaml`](build.yaml)
+lists their boards and shields. The local build uses the
+`zmkfirmware/zmk-dev-arm:4.1-branch` Docker image. The SHA-256 hashes of the
+three locally built UF2 files are recorded in
+[`firmware/SHA256SUMS`](firmware/SHA256SUMS). The UF2 binaries themselves are
+excluded from Git.
+
+I reported flashing settings-reset firmware and then newly built regular
+images to both halves and the dongle on 2026-10-13. The firmware has not been
+read back from the devices, so the repository records the build inputs and
+local output hashes rather than independently verifying the installed bytes.
+An earlier right-half diagnostic build is documented separately in
+[`firmware/diagnostic-right-2026-10-13/`](firmware/diagnostic-right-2026-10-13/);
+it is not the latest three-device build.
+
 `build.yaml` defines three distinct images:
 
 | Image | Hardware | Role |
