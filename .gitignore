@@ -17,3 +17,7 @@ compile_commands.json
 __pycache__/
 *.py[cod]
 *.FCBak
+
+# Local case designs and related plans are kept outside the public repository.
+case/
+docs/superpowers/
