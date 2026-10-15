@@ -1,0 +1,13 @@
+include:
+  - board: halcyon_dongle//zmk
+    shield: halcyon_kyria_dongle
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    snippet: studio-rpc-usb-uart
+    artifact-name: kyria-dongle-wellum36
+  - board: halcyon_wireless//zmk
+    shield: halcyon_kyria_left mod_battery_coincell
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: kyria-left-coincell
+  - board: halcyon_wireless//zmk
+    shield: halcyon_kyria_right mod_battery_coincell
+    artifact-name: kyria-right-coincell

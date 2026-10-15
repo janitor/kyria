@@ -1,0 +1,126 @@
+{
+  "title": "Kyria Universal Ortho Split",
+  "rules": [
+    {
+      "description": "Kyria: Caps toggles Universal Ortho EN/RU, F13 selects EN; keep Command source shortcuts",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": { "optional": ["any"] },
+            "simultaneous": [
+              { "key_code": "left_command" },
+              { "key_code": "right_command" }
+            ],
+            "simultaneous_options": { "key_down_order": "insensitive" }
+          },
+          "to": [{ "select_input_source": { "language": "^pl$" } }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_command",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [{ "key_code": "left_command" }],
+          "to_if_alone": [
+            { "select_input_source": { "input_source_id": "^com.apple.keylayout.US$" } }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [{ "key_code": "right_command" }],
+          "to_if_alone": [
+            { "select_input_source": { "input_source_id": "^com.apple.keylayout.Russian$" } }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^local\\.raman\\.keyboardlayout\\.universalorthosplit\\.keylayout\\.UniversalOrthoRU$"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                { "vendor_id": 7504, "product_id": 24926, "is_keyboard": true }
+              ]
+            },
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "input_source_id": "^local\\.raman\\.keyboardlayout\\.universalorthosplit\\.keylayout\\.UniversalOrthoEN$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^local\\.raman\\.keyboardlayout\\.universalorthosplit\\.keylayout\\.UniversalOrthoEN$"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                { "vendor_id": 7504, "product_id": 24926, "is_keyboard": true }
+              ]
+            },
+            {
+              "type": "input_source_unless",
+              "input_sources": [
+                {
+                  "input_source_id": "^local\\.raman\\.keyboardlayout\\.universalorthosplit\\.keylayout\\.UniversalOrthoEN$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f13",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^local\\.raman\\.keyboardlayout\\.universalorthosplit\\.keylayout\\.UniversalOrthoEN$"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                { "vendor_id": 7504, "product_id": 24926, "is_keyboard": true }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

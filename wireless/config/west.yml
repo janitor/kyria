@@ -1,0 +1,14 @@
+manifest:
+  remotes:
+    - name: splitkb
+      url-base: https://github.com/splitkb
+  projects:
+    - name: zmk
+      remote: splitkb
+      revision: f0821fb5e7f1577bcfce36fb4ce899cfb395f00a
+      import: app/west.yml
+    - name: zmk-halcyon-module
+      remote: splitkb
+      revision: a83eaa492a678ed12fb5feabc62426dc1ed3a3cb
+  self:
+    path: config

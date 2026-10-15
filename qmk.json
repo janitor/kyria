@@ -1,0 +1,37 @@
+{
+    "userspace_version": "1.1",
+    "build_targets": [
+        [
+            "splitkb/halcyon/kyria/rev4",
+            "miryoku_qwerty",
+            {
+                "HLC_TFT_DISPLAY": "1",
+                "TARGET": "kyria_rev4_miryoku_qwerty_left_display"
+            }
+        ],
+        [
+            "splitkb/halcyon/kyria/rev4",
+            "miryoku_qwerty",
+            {
+                "HLC_NONE": "1",
+                "TARGET": "kyria_rev4_miryoku_qwerty_right_none"
+            }
+        ],
+        [
+            "splitkb/halcyon/kyria/rev4",
+            "wellum36",
+            {
+                "HLC_TFT_DISPLAY": "1",
+                "TARGET": "kyria_rev4_wellum36_left_display"
+            }
+        ],
+        [
+            "splitkb/halcyon/kyria/rev4",
+            "wellum36",
+            {
+                "HLC_NONE": "1",
+                "TARGET": "kyria_rev4_wellum36_right_none"
+            }
+        ]
+    ]
+}

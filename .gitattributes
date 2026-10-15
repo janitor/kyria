@@ -1,0 +1,9 @@
+# Generated CAD and packaged output are reviewed as files, not line diffs.
+*.step -diff
+*.stl binary
+*.3mf binary
+*.FCStd binary
+*.zip binary
+*.pdf binary
+*.pb binary
+*.icns binary
